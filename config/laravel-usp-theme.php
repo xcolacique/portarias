@@ -1,35 +1,12 @@
 <?php
 
-$admin = [
+$portarias = [
     [
-        'text' => '<i class="fas fa-atom"></i>  SubItem 1',
+        'text' => 'Criar',
         'url' => 'subitem1',
     ],
     [
-        'text' => 'SubItem 2',
-        'url' => '/subitem2',
-        'can' => 'admin',
-    ],
-    [
-        'type' => 'divider',
-    ],
-    [
-        'type' => 'header',
-        'text' => 'Cabeçalho',
-    ],
-    [
-        'text' => 'SubItem 3',
-        'url' => 'subitem3',
-    ],
-];
-
-$submenu2 = [
-    [
-        'text' => 'SubItem 1',
-        'url' => 'subitem1',
-    ],
-    [
-        'text' => 'SubItem 2',
+        'text' => 'Listar',
         'url' => 'subitem2',
         'can' => 'admin',
     ],
@@ -45,25 +22,10 @@ $menu = [
         'key' => 'menu_dinamico',
     ],
     [
-        'text' => 'Drop Down',
-        'submenu' => $submenu2,
+        'text' => 'Portarias',
+        'submenu' => $portarias,
         'can' => '',
-    ],
-    [
-        'text' => 'Está logado',
-        'url' => config('app.url') . '/logado', // com caminho absoluto
-        'can' => 'user',
-    ],
-    [
-        'text' => 'Menu gerente',
-        'url' => 'gerente',
-        'can' => 'gerente',
-    ],
-    [
-        'text' => 'Menu admin',
-        'submenu' => $admin,
-        'can' => 'admin',
-    ],
+    ]
 ];
 
 $right_menu = [
