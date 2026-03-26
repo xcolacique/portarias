@@ -1,25 +1,31 @@
 @extends('laravel-usp-theme::master')
 
 @section('content')
-    <div class="portaria_form_block">
-        <div class="col-md-12">
-            <h2 class="portaria_form_title">Crie uma portaria</h2>
-        </div>
-        <form class="portaria_form" method="POST" action="/store">
+    <div class="container">
+        <form method="POST" action="/store">
             @csrf
-            <div>
-                <label class="form-label" for="title">Título:</label>
-                <input class="form-control" type="text" name="title">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="h3">Crie uma portaria</h2>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label class="form-label" for="title">Título:</label>
+                        <input class="form-control" type="text" name="title">
+                    </div>
+                    <div class="form-group">
+                        <label for="introduction">Preâmbulo:</label>
+                        <textarea class="form-control" rows="5" name="introduction"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="content">Conteúdo:</label>
+                        <textarea class="form-control" rows="10" name="content"></textarea>
+                    </div>
+                    <div class="col">
+                        <button type="submit" class="btn btn-success float-right">Criar Portaria</button>
+                    </div>
+                </div>
             </div>
-            <div>
-                <label for="introduction">Preâmbulo</label>
-                <textarea class="form-control" name="introduction"></textarea>
-            </div>
-            <div>
-                <label for="content">Conteúdo</label>
-                <textarea class="form-control" name="content"></textarea>
-            </div>
-            <button type="submit" class="btn btn-success">Criar Portaria</button>
         </form>
     </div>
 @endsection('content')
