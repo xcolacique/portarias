@@ -2,11 +2,14 @@
 
 @section('content')
     <div class="container">
-        <form method="POST" action="/store">
+        <div class="main-container">
+			<div id="editor"></div>
+		</div>
+        {{-- <form method="POST" action="/store">
             @csrf
             <div class="card">
                 <div class="card-header">
-                    <h2 class="h3">Crie uma portaria</h2>
+                    <h2 class="display-6">Crie uma portaria</h2>
                 </div>
                 <div class="card-body">
                     <div class="form-group">
@@ -26,7 +29,42 @@
                     </div>
                 </div>
             </div>
-        </form>
+        </form> --}}
     </div>
+    <script type="importmap">
+        {
+            "imports": {
+                "ckeditor5": "../vendor/ckeditor/ckeditor5.js",
+                "ckeditor5/": "../vendor/ckeditor/"
+            }
+        }
+    </script>
+    <script type="module">
+        import {
+            ClassicEditor,
+            Essentials,
+            Paragraph,
+            Bold,
+            Italic,
+            Font
+        } from 'ckeditor5';
+
+        ClassicEditor
+            .create( {
+                attachTo: document.querySelector( '#editor' ),
+                plugins: [ Essentials, Paragraph, Bold, Italic, Font ],
+                licenseKey: 'GPL',
+                toolbar: [
+                    'undo', 'redo', '|', 'bold', 'italic', '|',
+                    'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor'
+                ]
+            } )
+            .then( editor => {
+                window.editor = editor;
+            } )
+            .catch( error => {
+                console.error( error );
+            } );
+	</script>
 @endsection('content')
 
