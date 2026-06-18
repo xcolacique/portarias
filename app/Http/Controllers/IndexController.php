@@ -9,7 +9,7 @@ class IndexController extends Controller
 {
     public function index() {
         $portarias = Portaria::select()->get();
-        return view("index", ['portarias' => $portarias]);
+        return view("portarias.index", ['portarias' => $portarias]);
     }
 
     public function create() {
