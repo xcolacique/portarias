@@ -8,8 +8,8 @@ use App\Models\Portaria;
 class IndexController extends Controller
 {
     public function index() {
-        $portarias = Portaria::select()->get();
-        return view("portarias.index", ['portarias' => $portarias]);
+        $portaria = ["Teste", "Teste","Teste","Teste","Teste",];
+        return view("portarias.index", ['portarias' => $portaria]);
     }
 
     public function create() {

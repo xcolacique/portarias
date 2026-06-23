@@ -20,13 +20,13 @@
                             <div class="card h-100 border">
                                 <div class="card-body d-flex flex-column">
                                     <h6 class="card-title">
-                                        {{ $portaria->titulo }}
+                                        {{ $portaria }}
                                     </h6>
                                     <span class="badge bg-secondary mb-2">
-                                        Tipo {{ $portaria->tipo }}
+                                        Tipo {{ $portaria }}
                                     </span>
                                     <small class="text-muted mb-3">
-                                        {{ $portaria->created_at->format('d/m/Y') }}
+                                        {{ $portaria }}
                                     </small>
                                     <div class="mt-auto">
                                         <a href="{{ route('portarias.show', $portaria) }}" class="btn btn-outline-primary btn-sm w-100 mb-1">
